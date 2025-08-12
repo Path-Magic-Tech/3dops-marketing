@@ -1,3 +1,5 @@
+const ASSET = (p) => `${import.meta.env.BASE_URL}${p}`
+
 export default function Hero({eyebrow, title, subtitle, ctaText, ctaHref}){
   return (
     <section className="hero">
@@ -8,7 +10,7 @@ export default function Hero({eyebrow, title, subtitle, ctaText, ctaHref}){
         {ctaText && <a className="btn" href={ctaHref || "/contact"}>{ctaText}</a>}
       </div>
       <div className="hero-bg" aria-hidden="true">
-        <img src="/images/hero-industrial.svg" alt=""/>
+        <img src={ASSET("images/hero-industrial.svg")} alt=""/>
       </div>
     </section>
   )

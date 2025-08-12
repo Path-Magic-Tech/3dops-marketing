@@ -1,5 +1,7 @@
-import { Outlet, NavLink } from "react-router-dom"
+import { Outlet, NavLink, Link } from "react-router-dom"
 import { useState } from "react"
+
+const ASSET = (p) => `${import.meta.env.BASE_URL}${p}`
 
 export default function App(){
   const [open, setOpen] = useState(false)
@@ -7,10 +9,10 @@ export default function App(){
     <div className="site">
       <header className="site-header">
         <div className="container header-inner">
-          <a href="/" className="brand">
-            <img src="/icons/logo-mark.svg" alt="3D Ops logo" aria-hidden="true"/>
+          <Link to="/" className="brand">
+            <img src={ASSET("icons/logo-mark.svg")} alt="3D Ops logo" aria-hidden="true"/>
             <span>3D Ops</span>
-          </a>
+          </Link>
           <button className="nav-toggle" aria-expanded={open} onClick={()=>setOpen(!open)}>
             <span className="sr-only">Toggle navigation</span>
             <svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
@@ -33,7 +35,7 @@ export default function App(){
         <div className="container grid-3">
           <div>
             <div className="brand mini">
-              <img src="/icons/logo-mark.svg" alt="" aria-hidden="true"/><span>3D Ops</span>
+              <img src={ASSET("icons/logo-mark.svg")} alt="" aria-hidden="true"/><span>3D Ops</span>
             </div>
             <p className="muted">Affordable metal additive manufacturing & product development.</p>
           </div>

@@ -11,16 +11,19 @@ import Contact from "./pages/Contact.jsx"
 import Work from "./pages/Work.jsx"
 import NotFound from "./pages/NotFound.jsx"
 
-const router = createBrowserRouter([
-  { path: "/", element: <App />, children: [
-    { index: true, element: <Home /> },
-    { path: "services", element: <Services /> },
-    { path: "work", element: <Work /> },
-    { path: "about", element: <About /> },
-    { path: "contact", element: <Contact /> },
-    { path: "*", element: <NotFound /> }
-  ]}
-], { basename: import.meta.env.BASE_URL })
+const router = createBrowserRouter(
+  [
+    { path: "/", element: <App />, children: [
+      { index: true, element: <Home /> },
+      { path: "services", element: <Services /> },
+      { path: "work", element: <Work /> },
+      { path: "about", element: <About /> },
+      { path: "contact", element: <Contact /> },
+      { path: "*", element: <NotFound /> }
+    ]}
+  ],
+  { basename: import.meta.env.BASE_URL }
+)
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
