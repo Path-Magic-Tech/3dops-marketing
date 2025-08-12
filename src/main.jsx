@@ -1,7 +1,7 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
 import { HelmetProvider } from "react-helmet-async"
-import { createBrowserRouter, RouterProvider, HashRouter } from "react-router-dom"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import App from "./App.jsx"
 import "./styles/3dops.css"
 import Home from "./pages/Home.jsx"
@@ -20,14 +20,12 @@ const router = createBrowserRouter([
     { path: "contact", element: <Contact /> },
     { path: "*", element: <NotFound /> }
   ]}
-])
+], { basename: import.meta.env.BASE_URL })
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <HashRouter>
-      <HelmetProvider>
-        <RouterProvider router={router} />
-      </HelmetProvider>
-    </HashRouter>
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
   </React.StrictMode>
 )
