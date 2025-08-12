@@ -1,8 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320">
-  <defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#39b6ff"/><stop offset="1" stop-color="#6af2c5"/></linearGradient></defs>
-  <rect width="480" height="320" fill="#12171b"/>
+  <defs>
+    <linearGradient id="amber" x1="0" x2="1">
+      <stop stop-color="#ffaf2b"/><stop offset="1" stop-color="#ff6b1a"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="320" fill="#101317"/>
   <g transform="translate(40,40)">
-    <rect width="400" height="240" rx="16" fill="#0f1418" stroke="#24313b"/>
-    <path d="M40 120l60-60 60 60 60-60 60 60 60-60" fill="none" stroke="url(#g)" stroke-width="8" stroke-linecap="round"/>
+    <rect width="400" height="240" rx="14" fill="#0c0f12" stroke="#1c2126" stroke-width="2"/>
+    <path d="M40 120l60-60 60 60 60-60 60 60 60-60"
+          fill="none" stroke="url(#amber)" stroke-width="8" stroke-linecap="round"/>
   </g>
 </svg>
