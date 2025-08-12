@@ -9,9 +9,6 @@ export default function Hero({eyebrow, title, subtitle, ctaText, ctaHref}){
         <p className="subtitle">{subtitle}</p>
         {ctaText && <a className="btn" href={ctaHref || "/contact"}>{ctaText}</a>}
       </div>
-      <div className="hero-bg" aria-hidden="true">
-        <img src={ASSET("images/hero-industrial.svg")} alt=""/>
-      </div>
     </section>
   )
 }
