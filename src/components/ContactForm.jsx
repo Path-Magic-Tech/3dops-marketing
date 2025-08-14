@@ -25,11 +25,11 @@ export default function ContactForm(){
       </label>
       <label>
         <span>Email</span>
-        <input name="email" type="email" required value={state.email} onChange={onChange} />
+        <input name="email" type="email" required value={state.email} onChange={onChange} /> 
       </label>
       <label className="wide">
         <span>How can we help?</span>
-        <textarea name="message" rows="6" required value={state.message} onChange={onChange} />
+        <textarea name="message" rows="6" required value={state.message} onChange={onChange} /> 
       </label>
       <button className="btn" type="submit">Send</button>
     </form>

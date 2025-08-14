@@ -1,10 +1,20 @@
-import { Outlet, NavLink, Link } from "react-router-dom"
-import { useState } from "react"
+import { Outlet, NavLink, Link, useLocation } from "react-router-dom"
+import { useState, useEffect} from "react";
 
 const ASSET = (p) => `${import.meta.env.BASE_URL}${p}`
 
 export default function App(){
   const [open, setOpen] = useState(false)
+  const NavigateTop = () => {
+    setOpen(false)
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+      window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+  }
   return (
     <div className="site">
       <header className="site-header">
@@ -18,11 +28,11 @@ export default function App(){
             <svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
           </button>
           <nav className={"nav "+(open?"open":"")}>
-            <NavLink to="/" end>Home</NavLink>
-            <NavLink to="/services">Services</NavLink>
-            <NavLink to="/work">Work</NavLink>
-            <NavLink to="/about">About</NavLink>
-            <NavLink to="/contact" className="cta">Get a Quote</NavLink>
+            <NavLink to="/" end onClick={NavigateTop}>Home</NavLink>
+            <NavLink to="/services" onClick={NavigateTop}>Services</NavLink>
+            <NavLink to="/work" onClick={NavigateTop}>Work</NavLink>
+            <NavLink to="/about" onClick={NavigateTop}>About</NavLink>
+            <NavLink to="/contact" className="cta" onClick={NavigateTop}>Get a Quote</NavLink>
           </nav>
         </div>
       </header>
