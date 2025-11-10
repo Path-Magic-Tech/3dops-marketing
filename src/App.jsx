@@ -30,7 +30,6 @@ export default function App(){
           <nav className={"nav "+(open?"open":"")}>
             <NavLink to="/" end onClick={NavigateTop}>Home</NavLink>
             <NavLink to="/services" onClick={NavigateTop}>Services</NavLink>
-            <NavLink to="/work" onClick={NavigateTop}>Work</NavLink>
             <NavLink to="/about" onClick={NavigateTop}>About</NavLink>
             <NavLink to="/contact" className="cta" onClick={NavigateTop}>Get a Quote</NavLink>
           </nav>
