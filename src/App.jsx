@@ -41,7 +41,7 @@ export default function App(){
       </main>
 
       <footer className="site-footer">
-        <div className="container grid-3">
+        <div className="container grid-2">
           <div>
             <div className="brand mini">
               <img src={ASSET("icons/logo-icon-white.png")} alt="" aria-hidden="true" className="footer-logo-icon"/><span>3D Ops</span>
@@ -53,12 +53,6 @@ export default function App(){
             <ul className="list">
               <li><a href="mailto:hello@3dops.com">hello@3dops.com</a></li>
               <li><a href="tel:+1-000-000-0000">+1 (000) 000-0000</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Follow</h4>
-            <ul className="list">
-              <li><a href="https://www.instagram.com/3dops/" target="_blank" rel="noreferrer">Instagram</a></li>
             </ul>
           </div>
         </div>
