@@ -1,19 +1,23 @@
+import { Link } from "react-router-dom"
 import Hero from "../components/Hero.jsx"
-import CardGrid from "../components/CardGrid.jsx"
 import Stat from "../components/Stat.jsx"
 
 export default function Home(){
   return (
     <>
       <Hero
-        eyebrow="Additive Manufacturing"
-        title="Metal 3D printing for mainstream manufacturing"
-        subtitle="We offer affordable, production-grade metal parts using ADAM-like diffusion processes—alongside plastics and composites—plus end‑to‑end product development from prototype to scale."
-        ctaText="Get a Quote"
+        eyebrow="Your Complete Product Development Partner"
+        title="One Partner for Your Entire Journey: Design, Build, Launch"
+        subtitle="Building a new product shouldn't mean coordinating multiple vendors. From manufacturing and engineering to software and fulfillment, we guide you through every step, so you can focus on growing your business, not managing suppliers."
+        ctaText="Get Started"
       />
 
       <section className="container section">
-        <div className="grid-3">
+        <h2>Why Work With 3D Ops?</h2>
+        <p className="lead">Launching a product or company means juggling manufacturers, engineers, developers, and logistics providers. We eliminate that complexity.</p>
+        <p>With 3D Ops, you get a single partner who guides you through every phase, from initial design to customer delivery. Whether you're a startup founder, product innovator, or enterprise team, we provide the complete infrastructure to bring your vision to market without the overhead of coordinating multiple vendors.</p>
+
+        <div className="grid-3" style={{marginTop: '32px'}}>
           <Stat label="Lead time" value="5–10 days" />
           <Stat label="Min. batch" value="1+" />
           <Stat label="Tolerances" value="±100μm*" />
@@ -22,28 +26,28 @@ export default function Home(){
       </section>
 
       <section className="container section">
-        <h2>What we build</h2>
-        <CardGrid items={[
-          { title: "Metal & Polymer AM", body: "Affordable sintered metal parts and precise polymer prints for fixtures, jigs, prototypes, and end-use components.", icon: "🛠️" },
-          { title: "Hardware & Enclosures", body: "CNC finishing, post‑processing, and rugged housings built for the field.", icon: "🧩" },
-          { title: "Electronics & Firmware", body: "Embedded systems, sensors, and firmware development for connected products.", icon: "📡" },
-          { title: "Cloud & Apps", body: "Web/mobile software, internal tools, and data dashboards to run your product.", icon: "☁️" },
-          { title: "E‑commerce", body: "Shopify themes & custom storefronts, fulfillment integrations, and subscription billing.", icon: "🛒" },
-          { title: "Prototyping to Production", body: "One partner from CAD → DFM → pilot runs → production ramp and ongoing ops.", icon: "🚀" },
-        ]} />
-      </section>
-
-      <section className="section band">
-        <div className="container">
-          <h2>Industries</h2>
-          <div className="pill-row">
-            <span className="pill">Robotics</span>
-            <span className="pill">Aerospace</span>
-            <span className="pill">Medical & Dental Models</span>
-            <span className="pill">Automotive</span>
-            <span className="pill">Industrial</span>
-            <span className="pill">Consumer</span>
-          </div>
+        <h2>Complete Capabilities Under One Roof</h2>
+        <div className="card-grid">
+          <Link to="/manufacturing" className="card">
+            <div className="card-icon">🛠️</div>
+            <h3>Manufacturing</h3>
+            <p>High-quality 3D printing with metal, polymer, and composite materials, from prototypes to production runs with full post-processing and finishing.</p>
+          </Link>
+          <Link to="/engineering" className="card">
+            <div className="card-icon">📐</div>
+            <h3>Engineering</h3>
+            <p>Full-service development from CAD modeling to design optimization. Mechanical, electronics, firmware, and quality control.</p>
+          </Link>
+          <Link to="/software" className="card">
+            <div className="card-icon">💻</div>
+            <h3>Software Development</h3>
+            <p>Full-stack web/mobile apps, IoT platforms, real-time dashboards, and advanced 2D/3D visualization systems.</p>
+          </Link>
+          <Link to="/fulfillment" className="card">
+            <div className="card-icon">📦</div>
+            <h3>Fulfillment</h3>
+            <p>Warehousing, inventory management, packaging, and logistics, from storage to doorstep delivery.</p>
+          </Link>
         </div>
       </section>
     </>
