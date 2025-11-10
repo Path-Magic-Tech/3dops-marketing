@@ -4,7 +4,7 @@ export default function Manufacturing(){
   return (
     <>
       <Helmet>
-        <title>Manufacturing Services — 3D Ops</title>
+        <title>Manufacturing Services - 3D Ops</title>
         <meta name="description" content="High-quality additive manufacturing, post-processing, and finishing services. Metal, polymer, and composite 3D printing from prototypes to production." />
       </Helmet>
       <section className="container section">

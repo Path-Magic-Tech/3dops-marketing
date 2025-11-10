@@ -4,15 +4,15 @@ export default function Engineering(){
   return (
     <>
       <Helmet>
-        <title>Engineering Services — 3D Ops</title>
+        <title>Engineering Services - 3D Ops</title>
         <meta name="description" content="Full-service product engineering: mechanical design, electronics, firmware development, and integration from concept to production." />
       </Helmet>
       <section className="container section">
         <h1>Engineering</h1>
-        <p className="lead">Full-service product development from concept to production — mechanical design, electronics, and firmware engineering.</p>
+        <p className="lead">Full-service product development from concept to production. Mechanical design, electronics, and firmware engineering.</p>
 
         <h2>Mechanical Design & Engineering</h2>
-        <p>Full-service product development from concept to production—collaborative design exploration, detailed CAD modeling, and design optimization for manufacturability.</p>
+        <p>Full-service product development from concept to production. Collaborative design exploration, detailed CAD modeling, and design optimization for manufacturability.</p>
         <ul className="checklist">
           <li>Concept development: Functional requirements, aesthetic goals, and manufacturability assessment</li>
           <li>3D modeling & drafting: Detailed CAD modeling, assemblies, and technical drawings</li>

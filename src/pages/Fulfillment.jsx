@@ -4,14 +4,14 @@ export default function Fulfillment(){
   return (
     <>
       <Helmet>
-        <title>Fulfillment Services — 3D Ops</title>
+        <title>Fulfillment Services - 3D Ops</title>
         <meta name="description" content="Flexible fulfillment solutions: warehousing, inventory management, packaging, and logistics. From storage to doorstep delivery." />
       </Helmet>
       <section className="container section">
         <h1>Fulfillment Services</h1>
         <p className="lead">Flexible, technology-driven fulfillment solutions that bridge the gap between production and delivery.</p>
 
-        <p>At 3D Ops, we provide fulfillment operations built to scale with your business, whether you need on-demand order processing, scheduled batch shipments, or a hybrid model that balances both. We manage warehousing, inventory, packaging, and logistics with precision — ensuring every product is stored, handled, and shipped exactly as intended.</p>
+        <p>At 3D Ops, we provide fulfillment operations built to scale with your business, whether you need on-demand order processing, scheduled batch shipments, or a hybrid model that balances both. We manage warehousing, inventory, packaging, and logistics with precision, ensuring every product is stored, handled, and shipped exactly as intended.</p>
 
         <h2>Warehousing & Inventory Management</h2>
         <p>Secure warehouse with real-time tracking and serialized control for complete visibility and accountability.</p>
@@ -53,7 +53,7 @@ export default function Fulfillment(){
         </ul>
 
         <h2>Flexible Solutions</h2>
-        <p>Whether we're handling products we manufacture or managing your external product lines, 3D Ops delivers a fulfillment solution that prioritizes quality, reliability, and speed — so you can focus on growing your business while we handle everything from storage to doorstep.</p>
+        <p>Whether we're handling products we manufacture or managing your external product lines, 3D Ops delivers a fulfillment solution that prioritizes quality, reliability, and speed. You can focus on growing your business while we handle everything from storage to doorstep.</p>
 
         <section className="section band">
           <div className="container">

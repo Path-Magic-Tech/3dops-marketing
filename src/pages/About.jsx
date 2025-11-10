@@ -6,13 +6,13 @@ export default function About(){
   return (
     <>
       <Helmet>
-        <title>About — 3D Ops</title>
+        <title>About - 3D Ops</title>
         <meta name="description" content="3D Ops makes advanced manufacturing accessible with end-to-end product development across hardware and software. From concept to scale." />
       </Helmet>
       <section className="container section">
         <h1>About 3D Ops</h1>
         <p className="lead">We make advanced manufacturing accessible and help teams ship real products.</p>
-        <p>Our roots are in additive manufacturing — offering affordable metal 3D printing for mainstream manufacturing — and we've expanded to provide end‑to‑end product development across hardware and software. From concept to production, we partner with innovators across defense, industrial, robotics, and consumer sectors to bring ideas to market.</p>
+        <p>Our roots are in additive manufacturing, offering affordable metal 3D printing for mainstream manufacturing, and we've expanded to provide end‑to‑end product development across hardware and software. From concept to production, we partner with innovators across defense, industrial, robotics, and consumer sectors to bring ideas to market.</p>
 
         <section className="section band" style={{marginTop: '48px', marginBottom: '48px'}}>
           <div className="container">
@@ -23,7 +23,7 @@ export default function About(){
               </div>
               <div>
                 <h2 style={{marginTop: 0}}>Our Vision</h2>
-                <p>To redefine how innovation gets done, faster, smarter, and tougher — creating a world where every good idea has a path to reality.</p>
+                <p>To redefine how innovation gets done, faster, smarter, and tougher. Creating a world where every good idea has a path to reality.</p>
               </div>
             </div>
           </div>
@@ -31,7 +31,7 @@ export default function About(){
 
         <h2>Why Choose 3D Ops</h2>
         <CardGrid items={[
-          { title: "Single Partner", body: "One point of contact from concept to scale—no more coordinating multiple vendors.", icon: "🤝" },
+          { title: "Single Partner", body: "One point of contact from concept to scale. No more coordinating multiple vendors.", icon: "🤝" },
           { title: "Full-Stack Expertise", body: "Manufacturing, engineering, software, and fulfillment under one roof.", icon: "⚡" },
           { title: "Startup-Ready Speed", body: "Proven track record in fast-paced environments where iteration and pragmatism are critical.", icon: "🚀" },
           { title: "Industrial Quality", body: "Production-grade results with small-batch flexibility and ROI-driven approach.", icon: "✨" },
@@ -68,7 +68,7 @@ export default function About(){
         <section className="section band" style={{marginTop: '48px'}}>
           <div className="container">
             <h2>Industries We Serve</h2>
-            <p>We support innovators across defense, robotics, industrial equipment, aerospace, automotive, consumer products, biotech, e-commerce, and R&D—bringing specialized expertise to each sector.</p>
+            <p>We support innovators across defense, robotics, industrial equipment, aerospace, automotive, consumer products, biotech, e-commerce, and R&D, bringing specialized expertise to each sector.</p>
           </div>
         </section>
       </section>

@@ -20,8 +20,7 @@ export default function App(){
       <header className="site-header">
         <div className="container header-inner">
           <Link to="/" className="brand">
-            <img src={ASSET("icons/logo-mark.svg")} alt="3D Ops logo" aria-hidden="true"/>
-            <span>3D Ops</span>
+            <img src={ASSET("icons/logo-horizontal-white.png")} alt="3D Ops" className="brand-logo"/>
           </Link>
           <button className="nav-toggle" aria-expanded={open} onClick={()=>setOpen(!open)}>
             <span className="sr-only">Toggle navigation</span>
@@ -31,6 +30,7 @@ export default function App(){
             <NavLink to="/" end onClick={NavigateTop}>Home</NavLink>
             <NavLink to="/services" onClick={NavigateTop}>Services</NavLink>
             <NavLink to="/about" onClick={NavigateTop}>About</NavLink>
+            <NavLink to="/team" onClick={NavigateTop}>Team</NavLink>
             <NavLink to="/contact" className="cta" onClick={NavigateTop}>Get a Quote</NavLink>
           </nav>
         </div>
@@ -44,7 +44,7 @@ export default function App(){
         <div className="container grid-3">
           <div>
             <div className="brand mini">
-              <img src={ASSET("icons/logo-mark.svg")} alt="" aria-hidden="true"/><span>3D Ops</span>
+              <img src={ASSET("icons/logo-icon-white.png")} alt="" aria-hidden="true" className="footer-logo-icon"/><span>3D Ops</span>
             </div>
             <p className="muted">Affordable metal additive manufacturing & product development.</p>
           </div>

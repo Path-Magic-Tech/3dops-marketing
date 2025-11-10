@@ -11,6 +11,7 @@ import Engineering from "./pages/Engineering.jsx"
 import Software from "./pages/Software.jsx"
 import Fulfillment from "./pages/Fulfillment.jsx"
 import About from "./pages/About.jsx"
+import Team from "./pages/Team.jsx"
 import Contact from "./pages/Contact.jsx"
 import NotFound from "./pages/NotFound.jsx"
 
@@ -24,6 +25,7 @@ const router = createBrowserRouter(
       { path: "software", element: <Software /> },
       { path: "fulfillment", element: <Fulfillment /> },
       { path: "about", element: <About /> },
+      { path: "team", element: <Team /> },
       { path: "contact", element: <Contact /> },
       { path: "*", element: <NotFound /> }
     ]}

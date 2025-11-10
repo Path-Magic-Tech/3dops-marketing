@@ -4,15 +4,15 @@ export default function Software(){
   return (
     <>
       <Helmet>
-        <title>Software Development — 3D Ops</title>
+        <title>Software Development - 3D Ops</title>
         <meta name="description" content="Custom software solutions, IoT platforms, e-commerce systems, and advanced visualization. Full-stack development from concept to scale." />
       </Helmet>
       <section className="container section">
         <h1>Software Development</h1>
-        <p className="lead">Custom software solutions that integrate seamlessly with hardware products — from cloud-connected IoT platforms to scalable e-commerce systems.</p>
+        <p className="lead">Custom software solutions that integrate seamlessly with hardware products, from cloud-connected IoT platforms to scalable e-commerce systems.</p>
 
         <h2>Our Team</h2>
-        <p>Led by experienced engineers <strong>Kaleb Hundersmarck</strong> and <strong>Conor Souhrada</strong>, our software team partners with innovators to build powerful, modern platforms that integrate seamlessly with hardware products. With deep experience from the startup world—building, launching, and scaling software products from zero to market—we bring both technical expertise and product thinking to every project.</p>
+        <p>Led by experienced engineers <strong>Kaleb Hundersmarck</strong> and <strong>Conor Souhrada</strong>, our software team partners with innovators to build powerful, modern platforms that integrate seamlessly with hardware products. With deep experience from the startup world, building, launching, and scaling software products from zero to market, we bring both technical expertise and product thinking to every project.</p>
         <p>From robotic construction management to e-commerce platforms, payment processing to IoT systems, our team has delivered mission-critical solutions across industries including biotech, robotics, and consumer tech. We specialize in sophisticated 2D/3D visualization tools, intelligent workflow automation, and scalable systems that drive real business results.</p>
 
         <h2>Core Software Engineering</h2>
@@ -74,7 +74,7 @@ export default function Software(){
             <p>Balena, Things Stack, Amazon IoT, AWS, Google Cloud, Docker</p>
           </div>
         </div>
-        <p className="muted">This stack highlights key technologies we work with regularly—we're comfortable adapting to new tools or client-preferred platforms as needed.</p>
+        <p className="muted">This stack highlights key technologies we work with regularly. We're comfortable adapting to new tools or client-preferred platforms as needed.</p>
 
         <section className="section band">
           <div className="container">

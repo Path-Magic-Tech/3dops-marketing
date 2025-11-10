@@ -7,15 +7,15 @@ export default function Home(){
     <>
       <Hero
         eyebrow="Your Complete Product Development Partner"
-        title="One Partner for Your Entire Journey — Design, Build, Launch"
-        subtitle="Building a new product shouldn't mean coordinating multiple vendors. From manufacturing and engineering to software and fulfillment, we guide you through every step—so you can focus on growing your business, not managing suppliers."
+        title="One Partner for Your Entire Journey: Design, Build, Launch"
+        subtitle="Building a new product shouldn't mean coordinating multiple vendors. From manufacturing and engineering to software and fulfillment, we guide you through every step, so you can focus on growing your business, not managing suppliers."
         ctaText="Get Started"
       />
 
       <section className="container section">
         <h2>Why Work With 3D Ops?</h2>
         <p className="lead">Launching a product or company means juggling manufacturers, engineers, developers, and logistics providers. We eliminate that complexity.</p>
-        <p>With 3D Ops, you get a single partner who guides you through every phase—from initial design to customer delivery. Whether you're a startup founder, product innovator, or enterprise team, we provide the complete infrastructure to bring your vision to market without the overhead of coordinating multiple vendors.</p>
+        <p>With 3D Ops, you get a single partner who guides you through every phase, from initial design to customer delivery. Whether you're a startup founder, product innovator, or enterprise team, we provide the complete infrastructure to bring your vision to market without the overhead of coordinating multiple vendors.</p>
 
         <div className="grid-3" style={{marginTop: '32px'}}>
           <Stat label="Lead time" value="5–10 days" />
@@ -31,12 +31,12 @@ export default function Home(){
           <Link to="/manufacturing" className="card">
             <div className="card-icon">🛠️</div>
             <h3>Manufacturing</h3>
-            <p>High-quality 3D printing with metal, polymer, and composite materials—from prototypes to production runs with full post-processing and finishing.</p>
+            <p>High-quality 3D printing with metal, polymer, and composite materials, from prototypes to production runs with full post-processing and finishing.</p>
           </Link>
           <Link to="/engineering" className="card">
             <div className="card-icon">📐</div>
             <h3>Engineering</h3>
-            <p>Full-service development from CAD modeling to design optimization—mechanical, electronics, firmware, and quality control.</p>
+            <p>Full-service development from CAD modeling to design optimization. Mechanical, electronics, firmware, and quality control.</p>
           </Link>
           <Link to="/software" className="card">
             <div className="card-icon">💻</div>
@@ -46,7 +46,7 @@ export default function Home(){
           <Link to="/fulfillment" className="card">
             <div className="card-icon">📦</div>
             <h3>Fulfillment</h3>
-            <p>Warehousing, inventory management, packaging, and logistics—from storage to doorstep delivery.</p>
+            <p>Warehousing, inventory management, packaging, and logistics, from storage to doorstep delivery.</p>
           </Link>
         </div>
       </section>
