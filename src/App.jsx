@@ -5,18 +5,22 @@ const ASSET = (p) => `${import.meta.env.BASE_URL}${p}`
 
 export default function App(){
   const [open, setOpen] = useState(false)
-  const NavigateTop = () => {
+  // Close mobile nav on link click
+  const handleNavClick = () => {
     setOpen(false)
-    const { pathname } = useLocation();
+  }
 
+  // Scroll to top on route change (works for all navigations)
+  function ScrollToTop() {
+    const { pathname } = useLocation()
     useEffect(() => {
-      window.scrollTo(0, 0);
-    }, [pathname]);
-
-    return null;
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    }, [pathname])
+    return null
   }
   return (
     <div className="site">
+      <ScrollToTop />
       <header className="site-header">
         <div className="container header-inner">
           <Link to="/" className="brand">
@@ -27,11 +31,11 @@ export default function App(){
             <svg viewBox="0 0 24 24" width="24" height="24"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/></svg>
           </button>
           <nav className={"nav "+(open?"open":"")}>
-            <NavLink to="/" end onClick={NavigateTop}>Home</NavLink>
-            <NavLink to="/services" onClick={NavigateTop}>Services</NavLink>
-            <NavLink to="/about" onClick={NavigateTop}>About</NavLink>
-            <NavLink to="/team" onClick={NavigateTop}>Team</NavLink>
-            <NavLink to="/contact" className="cta" onClick={NavigateTop}>Get a Quote</NavLink>
+            <NavLink to="/" end onClick={handleNavClick}>Home</NavLink>
+            <NavLink to="/services" onClick={handleNavClick}>Services</NavLink>
+            <NavLink to="/about" onClick={handleNavClick}>About</NavLink>
+            <NavLink to="/team" onClick={handleNavClick}>Team</NavLink>
+            <NavLink to="/contact" className="cta" onClick={handleNavClick}>Get a Quote</NavLink>
           </nav>
         </div>
       </header>
