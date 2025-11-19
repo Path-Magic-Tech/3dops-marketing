@@ -1,7 +1,8 @@
 import { useState } from "react"
+import emailjs from '@emailjs/browser';
 
 export default function ContactForm(){
-  const [state, setState] = useState({ name:"", email:"", message:"" })
+  const [state, setState] = useState({ name:"", email:"", phone:"", company:"", message:"" })
   const [sent, setSent] = useState(false)
 
   function onChange(e){
@@ -9,8 +10,18 @@ export default function ContactForm(){
   }
   function onSubmit(e){
     e.preventDefault()
-    // In production, POST to your backend or a form service like Formspark/Formspree.
-    setSent(true)
+    const templateParams = { ...state };
+    emailjs
+      .send('service_e5p2zw8', 'template_nxxq0ux', templateParams, { publicKey: 'dEz55kIY-mricyQxF' })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          setSent(true);
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+        }
+      );
   }
 
   if(sent){
@@ -26,6 +37,14 @@ export default function ContactForm(){
       <label>
         <span>Email</span>
         <input name="email" type="email" required value={state.email} onChange={onChange} /> 
+      </label>
+      <label>
+        <span>Phone (optional)</span>
+        <input name="phone" type="tel" placeholder="(555) 123-4567" value={state.phone} onChange={onChange} pattern="[0-9()+\-\s]{7,}" />
+      </label>
+      <label>
+        <span>Company (optional)</span>
+        <input name="company" type="text" placeholder="Company" value={state.company} onChange={onChange} />
       </label>
       <label className="wide">
         <span>How can we help?</span>
