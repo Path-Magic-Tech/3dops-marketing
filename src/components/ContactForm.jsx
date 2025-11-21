@@ -12,7 +12,7 @@ export default function ContactForm(){
     e.preventDefault()
     const templateParams = { ...state };
     emailjs
-      .send('service_e5p2zw8', 'template_nxxq0ux', templateParams, { publicKey: 'dEz55kIY-mricyQxF' })
+      .send('service_e5p2zw8', 'template_dfwdei7', templateParams, { publicKey: 'dEz55kIY-mricyQxF' })
       .then(
         () => {
           console.log('SUCCESS!');
