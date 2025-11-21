@@ -122,12 +122,46 @@ a:hover{opacity: 0.9}
 @media (max-width: 620px){ .card-grid{grid-template-columns:1fr} }
 
 .card{
+  display:block;
+  position:relative;
   background: var(--panel);
-  border:2px solid var(--border); border-radius:12px; padding:18px; box-shadow:var(--shadow)
+  border:2px solid var(--border); border-radius:12px; padding:18px; box-shadow:var(--shadow);
+  cursor:pointer;
+  transition: border-color .25s, transform .25s, box-shadow .25s, background .25s;
+  overflow:hidden;
 }
 .card h3{margin:.2rem 0 .5rem}
 .card p{color:var(--muted)}
 .card-icon{font-size:1.25rem}
+
+/* Card interactive states */
+.card::after{
+  content:"→"; position:absolute; top:14px; right:16px; font-size:.95rem; opacity:.35; transition:opacity .25s, transform .25s; pointer-events:none;
+}
+.card:hover, .card:focus-visible{
+  border-color: color-mix(in srgb, var(--brand) 55%, var(--border));
+  transform:translateY(-4px);
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(0,0,0,.4));
+  box-shadow: 0 10px 28px rgba(0,0,0,.55), 0 0 0 3px color-mix(in srgb, var(--brand) 28%, transparent);
+}
+.card:hover::after, .card:focus-visible::after{opacity:.9; transform:translateX(4px)}
+.card:active{transform:translateY(-1px)}
+
+/* Ripple effect */
+.ripple{
+  position:absolute;
+  width:20px;height:20px;
+  background: radial-gradient(circle at center, color-mix(in srgb,var(--brand) 80%, #fff) 0%, transparent 70%);
+  border-radius:50%;
+  transform:translate(-50%, -50%) scale(.3);
+  opacity:.55;
+  pointer-events:none;
+  mix-blend-mode:screen;
+  animation:ripple .7s ease-out forwards;
+}
+@keyframes ripple{
+  to{transform:translate(-50%, -50%) scale(18); opacity:0}
+}
 
 /* Stats */
 .stat{

@@ -21,6 +21,8 @@ export default function App(){
   return (
     <div className="site">
       <ScrollToTop />
+      {/* Global ripple initializer */}
+      <RippleInitializer />
       <header className="site-header">
         <div className="container header-inner">
           <Link to="/" className="brand">
@@ -54,14 +56,34 @@ export default function App(){
           </div>
           <div>
             <h4>Contact</h4>
-            <ul className="list">
-              <li><a href="mailto:hello@3dops.com">hello@3dops.com</a></li>
-              <li><a href="tel:+1-000-000-0000">+1 (000) 000-0000</a></li>
-            </ul>
+              <a href="mailto:hello@3dops.com">hello@3dops.com</a>
           </div>
         </div>
         <div className="container tiny">© {new Date().getFullYear()} 3D Ops</div>
       </footer>
     </div>
   )
+}
+
+// Component to attach ripple interaction to elements with .card
+function RippleInitializer(){
+  useEffect(()=>{
+    const handler = (e) => {
+      const card = e.target.closest('.card');
+      if(!card) return;
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const span = document.createElement('span');
+      span.className = 'ripple';
+      span.style.left = x + 'px';
+      span.style.top = y + 'px';
+      card.appendChild(span);
+      span.addEventListener('animationend', ()=> span.remove());
+    }
+    // Use pointerdown for quicker mobile response
+    document.addEventListener('pointerdown', handler, { passive:true });
+    return () => document.removeEventListener('pointerdown', handler);
+  },[]);
+  return null;
 }
