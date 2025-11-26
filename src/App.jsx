@@ -65,12 +65,12 @@ export default function App(){
   )
 }
 
-// Component to attach ripple interaction to elements with .card
+// Component to attach ripple interaction to elements with .card (excluding .card-static)
 function RippleInitializer(){
   useEffect(()=>{
     const handler = (e) => {
       const card = e.target.closest('.card');
-      if(!card) return;
+      if(!card || card.classList.contains('card-static')) return;
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
