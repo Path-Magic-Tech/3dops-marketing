@@ -9,7 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "postbuild": "cp dist/index.html dist/404.html",
-    "predeploy": "npm run build",
+    "predeploy": "npm run build && cp CNAME dist/CNAME",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
