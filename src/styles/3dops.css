@@ -147,6 +147,16 @@ a:hover{opacity: 0.9}
 .card:hover::after, .card:focus-visible::after{opacity:.9; transform:translateX(4px)}
 .card:active{transform:translateY(-1px)}
 
+/* Static cards (non-clickable) */
+.card-static{cursor:default}
+.card-static::after{display:none}
+.card-static:hover, .card-static:focus-visible{
+  border-color: var(--border);
+  transform:none;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+}
+
 /* Ripple effect */
 .ripple{
   position:absolute;
