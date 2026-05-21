@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>RAPID-M · Animation Reel</title>
+<style>
+  html, body {
+    margin: 0; padding: 0; background: #0B0D10;
+    font-family: 'Barlow', system-ui, sans-serif;
+    color: #F6F7F9;
+    overflow: hidden;
+    height: 100vh; width: 100vw;
+  }
+  deck-stage section {
+    position: relative;
+    background: #0B0D10;
+    overflow: hidden;
+  }
+  /* Scene shell — every scene is 1600×900 */
+  .scene {
+    position: absolute; inset: 0;
+    overflow: hidden;
+  }
+  /* Hide the FPS scrubber on the embedded Stage — we use deck-stage nav instead */
+  canvas { display: block; }
+  /* Stage's playback bar — kill any descendant of .scene whose inline style
+     declares the dark scrubber background. React serializes style values with
+     spaces ('rgba(20, 20, 20, 0.92)'), so match that exact form. */
+  .scene div[style*="rgba(20, 20, 20, 0.92)"],
+  .scene div[style*="rgba(20,20,20,0.92)"] {
+    display: none !important;
+  }
+</style>
+
+<!-- React + Babel pinned -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
+
+<!-- three.js loaded as ES module via Vite (resolves bare 'three' from node_modules).
+     rapid-cad-module.js imports THREE and assigns it to window.THREE so the
+     plain scripts below (rapid-model.js, bots-model.js, scenes.jsx) all
+     share the same instance. They reference window.THREE only lazily
+     inside builder fns, so they're safe to load before the module runs.
+     robot-model.js, trashcan-model.js, truck-model.js, tripod-model.js,
+     and ladder-model.js are also ES modules — they import three directly
+     and expose .ready promises on window.{RobotModel, TrashcanModel,
+     TruckModel, TripodModel, LadderModel} so the mounting code can wait
+     for GLB loads. -->
+
+<!-- our model + scenes -->
+<script src="rapid-model.js"></script>
+<script src="bots-model.js"></script>
+<script src="deck-stage.js"></script>
+  <script type="module" crossorigin src="/rapid-m/assets/index-CMsBz0Vf.js"></script>
+  <link rel="stylesheet" crossorigin href="/rapid-m/assets/index-VuUdTg0q.css">
+</head>
+<body>
+
+<deck-stage width="1600" height="900">
+
+  <section data-screen-label="01 Hero Turntable">
+    <div id="scene-1" class="scene"></div>
+  </section>
+
+  <section data-screen-label="02 Mosaic Scan">
+    <div id="scene-2" class="scene"></div>
+  </section>
+
+  <section data-screen-label="03 Exploded Assembly">
+    <div id="scene-3" class="scene"></div>
+  </section>
+
+  <section data-screen-label="04 Field Deployment">
+    <div id="scene-4" class="scene"></div>
+  </section>
+
+  <section data-screen-label="05 Mounting Versatility">
+    <div id="scene-5" class="scene"></div>
+  </section>
+
+  <section data-screen-label="06 Universal Compatibility">
+    <div id="scene-6" class="scene"></div>
+  </section>
+
+</deck-stage>
+
+<!-- Animation engine + scenes -->
+<script type="text/babel" src="animations.jsx" data-presets="env,react"></script>
+<script type="text/babel" src="scenes.jsx" data-presets="env,react"></script>
+
+<!-- Mount each scene -->
+<script type="text/babel" data-presets="env,react">
+  // Each scene runs its own independent <Stage> looping at its own duration.
+  // The Stage handles auto-scaling so 1600×900 fills the deck-stage section.
+
+  function App({ Scene, duration }) {
+    return (
+      <Stage
+        width={1600}
+        height={900}
+        duration={duration}
+        background="#0B0D10"
+        loop={true}
+        autoplay={true}
+        persistKey={'rapidm-' + Scene.name}
+      >
+        <Scene width={1600} height={900} />
+      </Stage>
+    );
+  }
+
+  // Wait one tick for Stage/Scene globals from animations.jsx + scenes.jsx
+  function mountWhenReady() {
+    if (!window.Stage || !window.SceneTurntable || !window.SceneFieldDeployment || !window.SceneMountingVersatility || !window.SceneCompatibility || !window.BotsModel || !window.THREE) {
+      requestAnimationFrame(mountWhenReady);
+      return;
+    }
+    // Wait for the CAD geometry to finish loading before mounting any
+    // scene — buildRapidM() in realistic mode reads window.RAPID_CAD.
+    if (window.RAPID_CAD_READY && !window.RAPID_CAD) {
+      window.RAPID_CAD_READY.then(() => mountWhenReady())
+        .catch(() => mountWhenReady()); // even on failure, fall back to schematic
+      return;
+    }
+    // Wait for the T7 robot GLB to finish loading. Scenes 4 (Field Deployment)
+    // and 5 (Mounting Versatility) both build the robot at construction time.
+    // On load failure we still proceed — scenes guard with `if (window.RobotModel)`.
+    if (window.RobotModel && window.RobotModel.ready) {
+      window.RobotModel.ready.then(() => doMount()).catch(() => doMount());
+      return;
+    }
+    doMount();
+  }
+  function doMount() {
+    ReactDOM.createRoot(document.getElementById('scene-1')).render(
+      <App Scene={SceneTurntable} duration={14} />
+    );
+    ReactDOM.createRoot(document.getElementById('scene-2')).render(
+      <App Scene={SceneMosaic} duration={18} />
+    );
+    ReactDOM.createRoot(document.getElementById('scene-3')).render(
+      <App Scene={SceneExploded} duration={12} />
+    );
+    ReactDOM.createRoot(document.getElementById('scene-4')).render(
+      <App Scene={SceneFieldDeployment} duration={16} />
+    );
+    ReactDOM.createRoot(document.getElementById('scene-5')).render(
+      <App Scene={SceneMountingVersatility} duration={18} />
+    );
+    ReactDOM.createRoot(document.getElementById('scene-6')).render(
+      <App Scene={SceneCompatibility} duration={36} />
+    );
+  }
+  mountWhenReady();
+</script>
+
+</body>
+</html>
