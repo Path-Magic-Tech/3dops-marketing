@@ -1,0 +1,153 @@
+/* =========================================================================
+   3DOps Design System — Colors & Type
+   3DOps is a complete product-development partner: additive manufacturing
+   (metals, composites, plastics), CAD + engineering, software / IoT /
+   dashboards, and fulfillment. RAPID-M is one of the products built on it.
+   ========================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Barlow:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  /* ---------- BRAND ----------
+     The official 3DOps mark is a single warm gray (~#4D4D4D) on white.
+     There is no brand chroma. Color enters the system only via
+     status / functional accents on instrument surfaces. */
+  --brand-gray:        #4D4D4D;   /* the wordmark + icon ink */
+  --brand-gray-700:    #3A3A3A;
+  --brand-gray-500:    #6E6E6E;
+  --brand-gray-300:    #B0B0B0;
+  --brand-gray-100:    #E8E8E8;
+  --brand-gray-50:     #F4F4F4;
+
+  /* Functional accent (NOT the brand color). Used on RAPID-M surfaces
+     to mirror the orange e-stop hardware, and as a single line of
+     emphasis for active state, focus rings, key data callouts. */
+  --rapid-orange:      #E88828;
+  --rapid-orange-600:  #D17418;
+  --rapid-orange-400:  #F0A04E;
+  --rapid-orange-200:  #FAD9B7;
+  --rapid-orange-50:   #FCF1E5;
+
+  /* Industrial neutrals (chassis hero areas, instrument backgrounds) */
+  --steel-950: #0B0D10;          /* near-black
+  --steel-900: #14181D;
+  --steel-800: #1E242C;
+  --steel-700: #2A323D;
+  --steel-600: #3D4854;
+  --steel-500: #5C6975;
+  --steel-400: #8893A0;
+  --steel-300: #B4BCC6;
+  --steel-200: #D6DCE3;
+  --steel-100: #ECEFF3;
+  --steel-50:  #F6F7F9;
+  --paper:     #FFFFFF;
+
+  /* ---------- SEMANTIC STATUS ---------- */
+  --status-ready:    #3FB985;   /* operation enabled, target reached */
+  --status-warn:     #F2B441;   /* soft-limit approach */
+  --status-fault:    #E5403B;   /* fault, e-stop, axis fault */
+  --status-info:     #3D8CD9;   /* comms, telemetry */
+  --status-estop:    #C8221C;   /* the latching e-stop red */
+
+  /* ---------- TOKENS ---------- */
+  --fg-1:  var(--steel-950);    /* primary text */
+  --fg-2:  var(--steel-700);    /* secondary text, captions */
+  --fg-3:  var(--steel-500);    /* tertiary, muted labels */
+  --fg-on-dark-1: var(--steel-50);
+  --fg-on-dark-2: var(--steel-300);
+  --fg-on-dark-3: var(--steel-400);
+  --fg-accent: var(--rapid-orange);          /* functional accent only */
+  --fg-brand:  var(--brand-gray);            /* the actual brand ink */
+
+  --bg-1:  var(--paper);        /* main surface */
+  --bg-2:  var(--steel-50);     /* card surface */
+  --bg-3:  var(--steel-100);    /* recessed / fields */
+  --bg-inverse-1: var(--steel-950);
+  --bg-inverse-2: var(--steel-900);
+  --bg-inverse-3: var(--steel-800);
+
+  --line-1: rgba(20, 24, 29, 0.10);   /* hairline divider */
+  --line-2: rgba(20, 24, 29, 0.18);   /* control border */
+  --line-on-dark-1: rgba(255,255,255, 0.08);
+  --line-on-dark-2: rgba(255,255,255, 0.16);
+
+  /* Schematic blueprint accent (cyan engineer-drawing tone) */
+  --schematic: #4FB6D9;
+  --schematic-soft: #DCEEF5;
+
+  /* ---------- TYPE FAMILIES ---------- */
+  --font-display: 'Barlow Condensed', 'Oswald', 'Roboto Condensed', sans-serif;
+  --font-sans:    'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:    'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /* ---------- TYPE SCALE ---------- */
+  --fs-eyebrow: 12px;   --lh-eyebrow: 1.1;   --ls-eyebrow: 0.16em;
+  --fs-caption: 13px;   --lh-caption: 1.35;  --ls-caption: 0.04em;
+  --fs-body:    15px;   --lh-body:    1.55;
+  --fs-body-lg: 17px;   --lh-body-lg: 1.55;
+  --fs-h6:      16px;   --lh-h6:      1.25;
+  --fs-h5:      20px;   --lh-h5:      1.2;
+  --fs-h4:      26px;   --lh-h4:      1.15;
+  --fs-h3:      36px;   --lh-h3:      1.05;
+  --fs-h2:      52px;   --lh-h2:      0.98;
+  --fs-h1:      80px;   --lh-h1:      0.92;
+  --fs-display: 124px;  --lh-display: 0.88;
+
+  /* ---------- SPACING / RADIUS / SHADOW ---------- */
+  --sp-1: 4px;  --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 24px;
+  --sp-6: 32px; --sp-7: 48px; --sp-8: 64px; --sp-9: 96px;
+
+  --r-0: 0;     /* hardware-honest sharp corners */
+  --r-1: 2px;
+  --r-2: 4px;   /* default control radius */
+  --r-3: 8px;
+  --r-pill: 999px;
+
+  --sh-1: 0 1px 0 rgba(11,13,16,0.04), 0 1px 2px rgba(11,13,16,0.06);
+  --sh-2: 0 2px 4px rgba(11,13,16,0.06), 0 8px 16px rgba(11,13,16,0.06);
+  --sh-3: 0 6px 12px rgba(11,13,16,0.08), 0 20px 40px rgba(11,13,16,0.10);
+
+  /* ---------- MOTION ---------- */
+  --ease-mech: cubic-bezier(0.2, 0.7, 0.1, 1);    /* servo-like settle */
+  --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
+  --t-fast: 120ms;  --t-med: 220ms;  --t-slow: 360ms;
+}
+
+/* ---------- SEMANTIC ELEMENT BASE ---------- */
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { font-family: var(--font-sans); font-size: var(--fs-body); line-height: var(--lh-body); color: var(--fg-1); background: var(--bg-1); }
+
+h1, .h1 { font-family: var(--font-display); font-weight: 800; font-size: var(--fs-h1); line-height: var(--lh-h1); letter-spacing: -0.01em; text-transform: uppercase; color: var(--fg-1); margin: 0; }
+h2, .h2 { font-family: var(--font-display); font-weight: 800; font-size: var(--fs-h2); line-height: var(--lh-h2); letter-spacing: -0.005em; text-transform: uppercase; color: var(--fg-1); margin: 0; }
+h3, .h3 { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-h3); line-height: var(--lh-h3); text-transform: uppercase; color: var(--fg-1); margin: 0; }
+h4, .h4 { font-family: var(--font-display); font-weight: 700; font-size: var(--fs-h4); line-height: var(--lh-h4); text-transform: uppercase; letter-spacing: 0.01em; color: var(--fg-1); margin: 0; }
+h5, .h5 { font-family: var(--font-sans); font-weight: 700; font-size: var(--fs-h5); line-height: var(--lh-h5); color: var(--fg-1); margin: 0; }
+h6, .h6 { font-family: var(--font-sans); font-weight: 600; font-size: var(--fs-h6); line-height: var(--lh-h6); color: var(--fg-1); margin: 0; }
+
+.display { font-family: var(--font-display); font-weight: 900; font-size: var(--fs-display); line-height: var(--lh-display); letter-spacing: -0.02em; text-transform: uppercase; }
+.eyebrow  { font-family: var(--font-sans); font-weight: 700; font-size: var(--fs-eyebrow); line-height: var(--lh-eyebrow); letter-spacing: var(--ls-eyebrow); text-transform: uppercase; color: var(--fg-2); }
+.caption  { font-family: var(--font-sans); font-weight: 500; font-size: var(--fs-caption); line-height: var(--lh-caption); color: var(--fg-3); }
+p, .p     { font-family: var(--font-sans); font-size: var(--fs-body); line-height: var(--lh-body); color: var(--fg-1); margin: 0; text-wrap: pretty; }
+.lead     { font-size: var(--fs-body-lg); line-height: var(--lh-body-lg); color: var(--fg-2); }
+
+code, .mono, .data {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+.spec-value { font-family: var(--font-mono); font-weight: 500; font-variant-numeric: tabular-nums; }
+
+/* The brand uses caret/chevron-style mil-spec stenciling moments — small accent component */
+.stencil-rule {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-sans); font-weight: 700; font-size: 11px;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--fg-accent);
+}
+.stencil-rule::before { content: ""; width: 24px; height: 2px; background: currentColor; }
+
+/* Status pills */
+.pill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: var(--r-pill); font-family: var(--font-mono); font-weight: 500; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
+.pill--ready { background: rgba(63,185,133,0.12); color: var(--status-ready); }
+.pill--warn  { background: rgba(242,180,65,0.14); color: #B7811C; }
+.pill--fault { background: rgba(229,64,59,0.12); color: var(--status-fault); }
+.pill--info  { background: rgba(61,140,217,0.12); color: var(--status-info); }

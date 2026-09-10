@@ -79,3 +79,12 @@ The ContactForm component ([src/components/ContactForm.jsx](src/components/Conta
 ### Image Assets
 
 Current images in [public/images/](public/images/) are SVG placeholders. Replace with actual product photography or royalty-free images as needed. The site includes sample part images referenced by Work page and an OG cover image for social sharing.
+
+### RAPID-M Animation Embed (unlisted)
+
+The RAPID-M sales-demo animation reel is embedded at `/rapid-m/` — a hidden URL not linked from any nav or sitemap. Crawlers are blocked via `Disallow: /rapid-m/` in [public/robots.txt](public/robots.txt).
+
+- **Source:** lives in the sibling repo `pmt/rapid-animations`. It's NOT a React route here — it's a pre-built static bundle dropped into `public/rapid-m/` and served as an HTML file directly.
+- **To rebuild after deck changes:** in `pmt/rapid-animations`, run `npm run deploy:embed`. That builds with `--base=/rapid-m/`, copies the standalone (non-bundled) `.js` / `.jsx` files alongside the bundle, then syncs everything into `pmt/3dops-marketing/public/rapid-m/`.
+- **Asset size:** ~176 MB (CAD STL + GLB files). Counts toward the GitHub Pages repo size budget — keep an eye on it.
+- **DO NOT** add `/rapid-m/` to [public/sitemap.xml](public/sitemap.xml) — the URL stays unlisted on purpose.
